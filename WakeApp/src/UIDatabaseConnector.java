@@ -2,6 +2,7 @@
 public class UIDatabaseConnector {
 	
 	public String wohnort;
+	public String ankuftszeit;
 	//Getter
 	public String getWohnort() {
 		return wohnort;
