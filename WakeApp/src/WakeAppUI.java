@@ -10,14 +10,23 @@ import javax.swing.JInternalFrame;
 import javax.swing.BoxLayout;
 import java.awt.Component;
 import javax.swing.JFormattedTextField;
+import javax.swing.JButton;
+
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.ButtonGroup;
 
 public class WakeAppUI {
 
 	private JFrame frame;
 	private JTextField txtUhrzeit;
-	private JTextField textField_1;
-	private JTextField textField;
-	private JTextField textField_2;
+	private JTextField txtZeitInMinuten;
+	private JTextField txtAdresse;
+	private JTextField txtAdresse_1;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JTextField txtWeckzeit;
 
 	/**
 	 * Launch the application.
@@ -27,8 +36,7 @@ public class WakeAppUI {
 			public void run() {
 				try {
 					WakeAppUI window = new WakeAppUI();
-					window.frame.setVisible(true);
-					
+					window.frame.setVisible(true);					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -48,55 +56,98 @@ public class WakeAppUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 438, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.SOUTH);
+		JLabel lblAnkunftszeit = new JLabel("Ankunftszeit:");
+		lblAnkunftszeit.setBounds(50, 51, 77, 36);
+		frame.getContentPane().add(lblAnkunftszeit);
 		
-		JRadioButton ÖPNV = new JRadioButton("\u00D6PNV");
-		panel.add(ÖPNV);
+		JLabel lblBentigteZeitZum = new JLabel("BenÃ¶tigte Zeit zum Fertigmachen:");
+		lblBentigteZeitZum.setBounds(50, 111, 167, 36);
+		frame.getContentPane().add(lblBentigteZeitZum);
 		
-		JRadioButton Auto = new JRadioButton("Auto");
-		panel.add(Auto);
+		JLabel lblWohnort = new JLabel("Wohnort:");
+		lblWohnort.setBounds(50, 169, 77, 36);
+		frame.getContentPane().add(lblWohnort);
 		
-		JRadioButton Fahrrad = new JRadioButton("Fahrrad");
-		panel.add(Fahrrad);
+		JLabel lblZielort = new JLabel("Zielort:");
+		lblZielort.setBounds(50, 232, 77, 36);
+		frame.getContentPane().add(lblZielort);
 		
-		JPanel panel_1 = new JPanel();
-		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
-		panel_1.setLayout(new BoxLayout(panel_1, BoxLayout.X_AXIS));
+		JRadioButton rdbtnOepnv = new JRadioButton("Ã–PNV");
+		buttonGroup.add(rdbtnOepnv);
+		rdbtnOepnv.setBounds(50, 329, 109, 23);
+		frame.getContentPane().add(rdbtnOepnv);
 		
-		JLabel AnkuftszeitLabel = new JLabel("Ankuftszeit:");
-		panel_1.add(AnkuftszeitLabel);
+		JRadioButton rdbtnAuto = new JRadioButton("Auto");
+		buttonGroup.add(rdbtnAuto);
+		rdbtnAuto.setBounds(161, 329, 109, 23);
+		frame.getContentPane().add(rdbtnAuto);
+		
+		JRadioButton rdbtnFahrrad = new JRadioButton("Fahrrad");
+		buttonGroup.add(rdbtnFahrrad);
+		rdbtnFahrrad.setBounds(272, 329, 109, 23);
+		frame.getContentPane().add(rdbtnFahrrad);
+		
+		
+		
+		JLabel lblTransportmittel = new JLabel("Transportmittel:");
+		lblTransportmittel.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblTransportmittel.setBounds(50, 299, 109, 23);
+		frame.getContentPane().add(lblTransportmittel);
 		
 		txtUhrzeit = new JTextField();
 		txtUhrzeit.setText("Uhrzeit");
-		txtUhrzeit.setToolTipText("Uhrzeit");
-		panel_1.add(txtUhrzeit);
-		txtUhrzeit.setColumns(1);
+		txtUhrzeit.setToolTipText("");
+		txtUhrzeit.setForeground(new Color(0, 0, 0));
+		txtUhrzeit.setBounds(260, 51, 109, 36);
+		frame.getContentPane().add(txtUhrzeit);
+		txtUhrzeit.setColumns(10);
 		
-		JLabel FertigmachenLabel = new JLabel("Ben\u00F6tigte Zeit zum Fertigmachen:");
-		panel_1.add(FertigmachenLabel);
+		txtZeitInMinuten = new JTextField();
+		txtZeitInMinuten.setText("Zeit in Minuten");
+		txtZeitInMinuten.setForeground(new Color(0, 0, 0));
+		txtZeitInMinuten.setColumns(10);
+		txtZeitInMinuten.setBounds(260, 111, 109, 36);
+		frame.getContentPane().add(txtZeitInMinuten);
 		
-		textField_1 = new JTextField();
-		panel_1.add(textField_1);
-		textField_1.setColumns(10);
+		txtAdresse = new JTextField();
+		txtAdresse.setText("Adresse");
+		txtAdresse.setForeground(new Color(0, 0, 0));
+		txtAdresse.setColumns(10);
+		txtAdresse.setBounds(260, 177, 109, 36);
+		frame.getContentPane().add(txtAdresse);
 		
-		JLabel WohnortLabel = new JLabel("Wohnort:");
-		panel_1.add(WohnortLabel);
+		txtAdresse_1 = new JTextField();
+		txtAdresse_1.setText("Adresse");
+		txtAdresse_1.setForeground(new Color(0, 0, 0));
+		txtAdresse_1.setColumns(10);
+		txtAdresse_1.setBounds(260, 240, 109, 36);
+		frame.getContentPane().add(txtAdresse_1);
 		
-		textField = new JTextField();
-		textField.setText("");
-		panel_1.add(textField);
-		textField.setColumns(10);
+		JLabel lblWakeApp = new JLabel("WakeApp");
+		lblWakeApp.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblWakeApp.setBounds(161, 11, 71, 23);
+		frame.getContentPane().add(lblWakeApp);
 		
-		JLabel ZielortLabel = new JLabel("Zielort:");
-		panel_1.add(ZielortLabel);
+		JButton btnBerechnen = new JButton("Berechnen");
+		btnBerechnen.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnBerechnen.setBounds(143, 389, 89, 23);
+		frame.getContentPane().add(btnBerechnen);
 		
-		textField_2 = new JTextField();
-		panel_1.add(textField_2);
-		textField_2.setColumns(10);
+		txtWeckzeit = new JTextField();
+		txtWeckzeit.setBounds(143, 451, 86, 20);
+		frame.getContentPane().add(txtWeckzeit);
+		txtWeckzeit.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("Stellen Sie Ihren Wecker auf die folgende Uhrzeit:");
+		lblNewLabel_2.setBounds(50, 426, 315, 14);
+		frame.getContentPane().add(lblNewLabel_2);
 	}
-
 }

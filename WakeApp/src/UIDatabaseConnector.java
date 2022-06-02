@@ -1,4 +1,4 @@
-//TODO: getter und setter für alle Felder der UI
+//TODO: getter und setter fï¿½r alle Felder der UI
 public class UIDatabaseConnector {
 	
 	public String ankunftszeit;
@@ -8,6 +8,7 @@ public class UIDatabaseConnector {
 	public boolean oepnv;
 	public boolean auto;
 	public boolean fahrrad;
+	public String weckzeit;
 	
 	//Getter
 	public String getAnkunftszeit() {
@@ -35,6 +36,10 @@ public class UIDatabaseConnector {
 	
 	public boolean getFahrrad() {
 		return fahrrad;
+	}
+	
+	public String getWeckzeit() {
+		return weckzeit;
 	}
 	
 	//Setter
@@ -65,5 +70,8 @@ public class UIDatabaseConnector {
 	public void setFahrrad(boolean newFahrrad) {
 		this.fahrrad = newFahrrad;
 	}
-
+	
+	public void setWeckzeit(String newWeckzeit) {
+		this.weckzeit = newWeckzeit;
+	}
 }
