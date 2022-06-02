@@ -25,6 +25,18 @@ public class UIDatabaseConnector {
 		return zielort;
 	}
 	
+	public boolean getOepnv() {
+		return oepnv;
+	}
+	
+	public boolean getAuto() {
+		return auto;
+	}
+	
+	public boolean getFahrrad() {
+		return fahrrad;
+	}
+	
 	//Setter
 	public void setAnkunftszeit(String newAnkunftszeit) {
 		this.ankunftszeit = newAnkunftszeit;
@@ -39,7 +51,19 @@ public class UIDatabaseConnector {
 	}
 	
 	public void setZielort(String newZielort) {
-		this.zielort= newZielort;
+		this.zielort = newZielort;
+	}
+	
+	public void setOepnv(boolean newOepnv) {
+		this.oepnv = newOepnv;
+	}
+	
+	public void setAuto(boolean newAuto) {
+		this.auto = newAuto;
+	}
+	
+	public void setFahrrad(boolean newFahrrad) {
+		this.fahrrad = newFahrrad;
 	}
 
 }

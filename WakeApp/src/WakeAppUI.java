@@ -28,6 +28,7 @@ public class WakeAppUI {
 				try {
 					WakeAppUI window = new WakeAppUI();
 					window.frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
