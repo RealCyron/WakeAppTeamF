@@ -19,6 +19,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.ButtonGroup;
 
 import UIDatabaseConnector.UIDatabaseConnector;
+import UIDatabaseConnector.DataStorage;
 
 public class WakeAppUI {
 
@@ -30,6 +31,7 @@ public class WakeAppUI {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField txtWeckzeit;
 	UIDatabaseConnector uiDatabaseConnector = new UIDatabaseConnector();
+	Datastorage dataStorage = new DataStorage();
 
 	/**
 	 * Launch the application.
@@ -147,6 +149,7 @@ public class WakeAppUI {
 				uiDatabaseConnector.setAuto(rdbtnAuto.isSelected());
 				uiDatabaseConnector.setFahrrad(rdbtnFahrrad.isSelected());
 				uiDatabaseConnector.setWeckzeit(txtWeckzeit.getText());
+				dataStorage.speichern();
 			}
 		});
 		btnBerechnen.setBounds(143, 389, 89, 23);
