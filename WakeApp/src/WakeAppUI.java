@@ -29,6 +29,7 @@ public class WakeAppUI {
 	private JTextField txtAdresse_1;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField txtWeckzeit;
+	UIDatabaseConnector uiDatabaseConnector = new UIDatabaseConnector();
 
 	/**
 	 * Launch the application.
@@ -138,6 +139,14 @@ public class WakeAppUI {
 		btnBerechnen.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				uiDatabaseConnector.setAnkunftszeit(txtUhrzeit.getText());
+				uiDatabaseConnector.setFertigmachZeit(txtZeitInMinuten.getText());
+				uiDatabaseConnector.setWohnort(txtAdresse.getText());
+				uiDatabaseConnector.setZielort(txtAdresse_1.getText());
+				uiDatabaseConnector.setOepnv(rdbtnOepnv.isSelected());
+				uiDatabaseConnector.setAuto(rdbtnAuto.isSelected());
+				uiDatabaseConnector.setFahrrad(rdbtnFahrrad.isSelected());
+				uiDatabaseConnector.setWeckzeit(txtWeckzeit.getText());
 			}
 		});
 		btnBerechnen.setBounds(143, 389, 89, 23);

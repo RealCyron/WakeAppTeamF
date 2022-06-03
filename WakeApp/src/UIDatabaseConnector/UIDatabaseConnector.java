@@ -1,4 +1,7 @@
 package UIDatabaseConnector;
+
+import javax.swing.JTextField;
+
 //TODO: getter und setter f�r alle Felder der UI
 	public class UIDatabaseConnector {
 	
@@ -48,8 +51,8 @@ package UIDatabaseConnector;
 			this.ankunftszeit = newAnkunftszeit;
 		}
 	
-		public void setFertigmachZeit(String newFertigmachZeit) {
-			this.fertigmachZeit = newFertigmachZeit;
+		public void setFertigmachZeit(String newFertigmachzeit) {
+			this.fertigmachZeit = newFertigmachzeit;
 		}
 		
 		public void setWohnort(String newWohnort) {
