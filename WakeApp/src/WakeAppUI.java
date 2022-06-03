@@ -18,6 +18,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ButtonGroup;
 
+import UIDatabaseConnector.UIDatabaseConnector;
+
 public class WakeAppUI {
 
 	private JFrame frame;
@@ -64,7 +66,7 @@ public class WakeAppUI {
 		lblAnkunftszeit.setBounds(50, 51, 77, 36);
 		frame.getContentPane().add(lblAnkunftszeit);
 		
-		JLabel lblBentigteZeitZum = new JLabel("Benötigte Zeit zum Fertigmachen:");
+		JLabel lblBentigteZeitZum = new JLabel("Ben\u00F6tigte Zeit zum Fertigmachen:");
 		lblBentigteZeitZum.setBounds(50, 111, 167, 36);
 		frame.getContentPane().add(lblBentigteZeitZum);
 		
@@ -76,7 +78,7 @@ public class WakeAppUI {
 		lblZielort.setBounds(50, 232, 77, 36);
 		frame.getContentPane().add(lblZielort);
 		
-		JRadioButton rdbtnOepnv = new JRadioButton("ÖPNV");
+		JRadioButton rdbtnOepnv = new JRadioButton("\u00D6PNV");
 		buttonGroup.add(rdbtnOepnv);
 		rdbtnOepnv.setBounds(50, 329, 109, 23);
 		frame.getContentPane().add(rdbtnOepnv);
