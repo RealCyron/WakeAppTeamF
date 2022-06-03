@@ -1,3 +1,4 @@
+package UIDatabaseConnector;
 
 public class DataStorage {
 
@@ -6,5 +7,7 @@ public class DataStorage {
 		
 		
 	}
-
+	public boolean speichern() {
+		return true;
+	}
 }

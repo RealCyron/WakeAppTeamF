@@ -18,8 +18,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ButtonGroup;
 
-import UIDatabaseConnector.UIDatabaseConnector;
 import UIDatabaseConnector.DataStorage;
+import UIDatabaseConnector.UIDatabaseConnector;
 
 public class WakeAppUI {
 
@@ -31,7 +31,7 @@ public class WakeAppUI {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField txtWeckzeit;
 	UIDatabaseConnector uiDatabaseConnector = new UIDatabaseConnector();
-	Datastorage dataStorage = new DataStorage();
+	DataStorage dataStorage = new DataStorage();
 
 	/**
 	 * Launch the application.
